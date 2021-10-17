@@ -3,7 +3,7 @@
 # Installation and usage
 
 1. git clone https://github.com/113-GittiGidiyor-Java-Spring-Bootcamp/fifth-homework-hakandrmz.git
-2. cd fourth-homework-hakandrmz/Homework-04
+2. cd fifth-homework-hakandrmz
 3. mvn spring-boot:run
 
 # Testing endpoints
