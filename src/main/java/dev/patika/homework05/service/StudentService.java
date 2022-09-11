@@ -106,6 +106,11 @@ public class StudentService {
         }
     }
 
+    public List<Student> getStudentByCourse(String courseCode) {
+        List<Student> result = studentRepository.findStudentsByCourses_CourseCode(courseCode);
+        return result;
+    }
+
     /**
      * method for checking student age is valid
      * @param studentDTO
@@ -134,4 +139,6 @@ public class StudentService {
             throw new InvalidParameterException();
         }
     }
+
+
 }

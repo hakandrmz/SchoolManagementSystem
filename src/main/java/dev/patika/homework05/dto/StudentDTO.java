@@ -25,7 +25,7 @@ public class StudentDTO {
     @ApiModelProperty(example = "Bursa/Türkiye")
     private String address;
 
-    @ApiModelProperty(example = "F")
+    @ApiModelProperty(example = "M")
     private String gender;
 
 }

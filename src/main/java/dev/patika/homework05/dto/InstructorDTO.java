@@ -27,7 +27,7 @@ public class InstructorDTO {
     @ApiModelProperty(example = "5389759463")
     private String phoneNumber;
 
-    @ApiModelProperty(example = "10101")
+    @ApiModelProperty(example = "7777")
     private double salary;
 
     @Enumerated(EnumType.STRING)
