@@ -1,13 +1,13 @@
 package tech.hdurmaz.sms.controller;
 
-import tech.hdurmaz.sms.dto.StudentDTO;
-import tech.hdurmaz.sms.entity.Student;
-import tech.hdurmaz.sms.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import tech.hdurmaz.sms.dto.StudentDTO;
+import tech.hdurmaz.sms.entity.Student;
+import tech.hdurmaz.sms.service.StudentService;
 
 @RestController
 @RequestMapping("/api")

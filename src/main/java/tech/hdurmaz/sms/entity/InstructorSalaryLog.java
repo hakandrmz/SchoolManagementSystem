@@ -1,7 +1,7 @@
 package tech.hdurmaz.sms.entity;
 
-import tech.hdurmaz.sms.entity.enums.SalaryChangeType;
 import lombok.*;
+import tech.hdurmaz.sms.entity.enums.SalaryChangeType;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

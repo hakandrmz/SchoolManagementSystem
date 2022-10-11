@@ -1,9 +1,9 @@
 package tech.hdurmaz.sms.repository;
 
-import tech.hdurmaz.sms.entity.Student;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+import tech.hdurmaz.sms.entity.Student;
 
 import java.util.List;
 

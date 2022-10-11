@@ -1,12 +1,12 @@
 package tech.hdurmaz.sms.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import tech.hdurmaz.sms.entity.enums.InstructorType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.lang.NonNull;
+import tech.hdurmaz.sms.entity.enums.InstructorType;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;

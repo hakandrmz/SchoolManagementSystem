@@ -2,7 +2,6 @@ package tech.hdurmaz.sms.dto;
 
 
 import tech.hdurmaz.sms.entity.enums.InstructorType;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,19 +14,10 @@ import javax.persistence.Enumerated;
 @NoArgsConstructor
 public class InstructorDTO {
 
-    @ApiModelProperty(hidden = true)
     private long id;
-
-    @ApiModelProperty(example = "Hakan")
     private String name;
-
-    @ApiModelProperty(example = "Uskudar/Istanbul")
     private String address;
-
-    @ApiModelProperty(example = "5389759463")
     private String phoneNumber;
-
-    @ApiModelProperty(example = "7777")
     private double salary;
 
     @Enumerated(EnumType.STRING)

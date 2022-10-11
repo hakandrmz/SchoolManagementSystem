@@ -64,7 +64,6 @@ public class InstructorController {
     @GetMapping("instructor/getSalaryLogsByInstructorId/{id}")
     public ResponseEntity<InstructorSalaryLog> getAllSalaryLogsByInstructorId(@PathVariable Long id){
 
-
         Optional<List<InstructorSalaryLog>> salaryLogs = instructorService.getInstructorSalaryLogsByInstructorId(id);
         if(salaryLogs.isPresent()){
             return new ResponseEntity(salaryLogs,HttpStatus.OK);
