@@ -9,8 +9,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class CustomConfiguration implements WebMvcConfigurer {
 
     @Bean
-    public CustomInterceptor getInterceptor(){
-        return new CustomInterceptor();
+    public ApiInterceptor getInterceptor(){
+        return new ApiInterceptor();
     }
 
     @Override

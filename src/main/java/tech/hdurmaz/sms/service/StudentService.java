@@ -39,9 +39,8 @@ public class StudentService {
 
     @Transactional
     public Optional<Student> findById(long id) {
-        Optional<Student> student = Optional.of(studentRepository.findById(id)
+        return Optional.of(studentRepository.findById(id)
                 .orElseThrow(() -> new StudentNotFoundException("Student not found with id:"+id)));
-        return student;
     }
 
     @Transactional
@@ -107,8 +106,7 @@ public class StudentService {
     }
 
     public List<Student> getStudentByCourse(String courseCode) {
-        List<Student> result = studentRepository.findStudentsByCourses_CourseCode(courseCode);
-        return result;
+        return studentRepository.findStudentsByCourses_CourseCode(courseCode);
     }
 
     /**

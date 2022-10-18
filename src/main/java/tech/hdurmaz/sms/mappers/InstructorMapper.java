@@ -9,5 +9,5 @@ import org.mapstruct.MappingTarget;
 @Mapper(componentModel = "spring")
 public interface InstructorMapper {
     void updateInstructorFromDto(InstructorDTO instructorDTO, @MappingTarget Instructor instructor);
-    void updateInstroctorDTOFromInstructor(Instructor instructor, @MappingTarget InstructorDTO instructorDTO);
+    void updateInstructorDTOFromInstructor(Instructor instructor, @MappingTarget InstructorDTO instructorDTO);
 }

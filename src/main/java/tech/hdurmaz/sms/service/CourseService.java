@@ -30,7 +30,6 @@ public class CourseService {
     }
 
     /**
-     *
      * @param id
      * @return list of courses saved database
      */
@@ -42,22 +41,24 @@ public class CourseService {
      * gets the course dto from controller
      * use mapper to map the course from course dto
      * saving the course using repository
+     *
      * @param courseDTO
      * @return
      */
     @Transactional
     public Optional<Course> save(CourseDTO courseDTO) {
-        if(this.isCourseExistOnDatabase(courseDTO.getCourseCode())){
+        if (this.isCourseExistOnDatabase(courseDTO.getCourseCode())) {
             throw new CourseIsAlreadyExistException(ErrorMessageConstants.COURSE_IS_ALREADY_EXIST);
-        }else {
+        } else {
             Course course = new Course();
-            courseMapper.updateCourseFromDto(courseDTO,course);
+            courseMapper.updateCourseFromDto(courseDTO, course);
             return Optional.of(courseRepository.save(course));
         }
     }
 
     /**
      * this method for saving courses on bootstrap
+     *
      * @param course
      * @return
      */
@@ -66,44 +67,40 @@ public class CourseService {
     }
 
     /**
-     *
-     * @param id
-     * delete course by id
+     * @param id delete course by id
      */
     public void deleteById(long id) {
         try {
             courseRepository.deleteById(id);
-        }catch (EmptyResultDataAccessException e){
+        } catch (EmptyResultDataAccessException e) {
             throw new CourseIsNotExistException(ErrorMessageConstants.COURSE_IS_NOT_EXIST);
         }
     }
 
     /**
-     *
-     * @param courseDTO
-     * method for update course saved in database
+     * @param courseDTO method for update course saved in database
      */
     @Transactional
     public void update(CourseDTO courseDTO) {
-        if(this.isCourseExistOnDatabase(courseDTO.getCourseCode())){
+        if (this.isCourseExistOnDatabase(courseDTO.getCourseCode())) {
             Course course = courseRepository.findById(courseDTO.getId())
                     .orElseThrow(() -> new CourseIsNotExistException(ErrorMessageConstants.COURSE_IS_NOT_EXIST));
-            courseMapper.updateCourseFromDto(courseDTO,course);
+            courseMapper.updateCourseFromDto(courseDTO, course);
             courseRepository.save(course);
-        }else {
+        } else {
             throw new CourseIsNotExistException(ErrorMessageConstants.COURSE_IS_NOT_EXIST);
         }
     }
 
     /**
      * this method for controlling the course code in database
+     *
      * @param courseCode
      * @return if course is exist return true else false
      */
     private boolean isCourseExistOnDatabase(String courseCode) {
         Course course = courseRepository.findCourseByCourseCode(courseCode);
         return course != null;
-
     }
 }
 

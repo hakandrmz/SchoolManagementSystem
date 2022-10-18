@@ -3,7 +3,7 @@ package tech.hdurmaz.sms.config;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+import org.springframework.web.servlet.HandlerInterceptor;
 import tech.hdurmaz.sms.utils.ClientRequestInfo;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @ComponentScan
 @Slf4j
-public class CustomInterceptor extends HandlerInterceptorAdapter {
+public class ApiInterceptor implements HandlerInterceptor {
 
     @Autowired
     ClientRequestInfo clientRequestInfo;
