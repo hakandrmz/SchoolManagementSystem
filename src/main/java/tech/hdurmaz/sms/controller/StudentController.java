@@ -9,6 +9,12 @@ import tech.hdurmaz.sms.dto.StudentDTO;
 import tech.hdurmaz.sms.entity.Student;
 import tech.hdurmaz.sms.service.StudentService;
 
+/*
+
+java -jar -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 .\sms-0.0.1-SNAPSHOT.jar
+
+ */
+
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor

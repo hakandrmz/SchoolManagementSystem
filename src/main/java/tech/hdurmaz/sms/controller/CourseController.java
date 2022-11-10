@@ -1,6 +1,7 @@
 package tech.hdurmaz.sms.controller;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
+@Slf4j
 public class CourseController {
 
     private final CourseService courseService;
@@ -26,11 +28,13 @@ public class CourseController {
 
     @GetMapping("courses/{id}")
     public ResponseEntity<CourseDTO> getCourseById(@PathVariable long id){
+        log.info("getCourseById request with id:" + id);
         return new ResponseEntity(courseService.findById(id),HttpStatus.OK);
     }
 
     @DeleteMapping("course/delete/{id}")
     public ResponseEntity<String> deleteCourseById(@PathVariable long id){
+        log.info("deleteCourseById request with id:" + id);
         courseService.deleteById(id);
         return new ResponseEntity<>("Instructed with id " + id + " deleted",HttpStatus.OK);
     }
